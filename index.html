@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Fresh subs, sides and drinks. Order online for pickup or delivery.">
+
+  <title>Firehouse Subs | Order Online</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <div class="top-bar">
+      <p>🔥 Freshly made. Served hot. Ordered your way.</p>
+    </div>
+
+    <nav class="navbar">
+
+      <a href="#" class="brand">
+        <span class="brand-icon">🔥</span>
+        <span>
+          <strong>FIREHOUSE</strong>
+          <small>SUBS</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#location">Location</a>
+      </div>
+
+      <button class="cart-button" onclick="openCart()">
+        🛒 Cart
+        <span id="cartCount">0</span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        🔥 MADE FRESH TO ORDER
+      </div>
+
+      <h1>
+        BIG SUBS.<br>
+        <span>BOLD FLAVOR.</span>
+      </h1>
+
+      <p>
+        Loaded with quality ingredients and made just the way
+        you like it.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">
+          ORDER NOW
+        </a>
+
+        <a href="#menu" class="btn btn-outline">
+          VIEW MENU
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-sub">
+
+      <div class="sub-shadow"></div>
+
+      <div class="sub-bread">
+        <span class="sesame">• • • • • • •</span>
+        <span class="sesame second">• • • • • •</span>
+      </div>
+
+      <div class="sub-fillings">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORDER TYPE -->
+  <section class="order-section">
+
+    <div class="order-container">
+
+      <div>
+        <span class="order-label">ORDER TYPE</span>
+        <h2>How would you like your order?</h2>
+      </div>
+
+      <div class="order-options">
+
+        <button class="order-option active"
+                onclick="setOrderType('Pickup', this)">
+          📍
+          <strong>Pickup</strong>
+          <small>Ready when you arrive</small>
+        </button>
+
+        <button class="order-option"
+                onclick="setOrderType('Delivery', this)">
+          🛵
+          <strong>Delivery</strong>
+          <small>Bring it to your door</small>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+  <main id="menu">
+
+    <section class="menu-section">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">FRESH FROM THE KITCHEN</span>
+
+        <h2>Our <em>Menu</em></h2>
+
+        <p>
+          Choose your favorite sub, add a side, and make it your own.
+        </p>
+
+      </div>
+
+
+      <!-- CATEGORY FILTER -->
+      <div class="categories">
+
+        <button class="category active"
+                onclick="filterMenu('all', this)">
+          All
+        </button>
+
+        <button class="category"
+                onclick="filterMenu('subs', this)">
+          🥪 Subs
+        </button>
+
+        <button class="category"
+                onclick="filterMenu('salads', this)">
+          🥗 Salads
+        </button>
+
+        <button class="category"
+                onclick="filterMenu('sides', this)">
+          🍟 Sides
+        </button>
+
+        <button class="category"
+                onclick="filterMenu('drinks', this)">
+          🥤 Drinks
+        </button>
+
+      </div>
+
+
+      <!-- MENU GRID -->
+      <div class="menu-grid" id="menuGrid">
+
+
+        <!-- SUB -->
+        <article class="menu-card"
+                 data-category="subs">
+
+          <div class="food-image sub-image">
+            🥪
+            <span class="popular">POPULAR</span>
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">HOT SUB</span>
+
+            <h3>Smoky Turkey & Provolone</h3>
+
+            <p>
+              Turkey breast, melted provolone, fresh lettuce,
+              tomato, onion and signature dressing.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$10.99</strong>
+
+              <button onclick="addToCart(
+                'Smoky Turkey & Provolone',
+                10.99
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SUB -->
+        <article class="menu-card"
+                 data-category="subs">
+
+          <div class="food-image sub-image">
+            🥪
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">HOT SUB</span>
+
+            <h3>Italian Firecracker</h3>
+
+            <p>
+              Italian meats, melted cheese, banana peppers,
+              onions, lettuce and tomato.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$11.49</strong>
+
+              <button onclick="addToCart(
+                'Italian Firecracker',
+                11.49
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SUB -->
+        <article class="menu-card"
+                 data-category="subs">
+
+          <div class="food-image sub-image">
+            🥪
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">COLD SUB</span>
+
+            <h3>Classic Roast Beef</h3>
+
+            <p>
+              Sliced roast beef with provolone, lettuce,
+              tomato, onion and house dressing.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$11.99</strong>
+
+              <button onclick="addToCart(
+                'Classic Roast Beef',
+                11.99
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SUB -->
+        <article class="menu-card"
+                 data-category="subs">
+
+          <div class="food-image sub-image">
+            🥪
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">HOT SUB</span>
+
+            <h3>BBQ Chicken Melt</h3>
+
+            <p>
+              Grilled chicken, smoked cheese, BBQ sauce,
+              crispy onions and fresh vegetables.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$10.49</strong>
+
+              <button onclick="addToCart(
+                'BBQ Chicken Melt',
+                10.49
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SALAD -->
+        <article class="menu-card"
+                 data-category="salads">
+
+          <div class="food-image salad-image">
+            🥗
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">FRESH</span>
+
+            <h3>Grilled Chicken Salad</h3>
+
+            <p>
+              Fresh greens, grilled chicken, tomatoes,
+              onions, peppers and cheese.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$9.99</strong>
+
+              <button onclick="addToCart(
+                'Grilled Chicken Salad',
+                9.99
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SIDE -->
+        <article class="menu-card"
+                 data-category="sides">
+
+          <div class="food-image">
+            🍟
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">SIDE</span>
+
+            <h3>Seasoned Fries</h3>
+
+            <p>
+              Crispy golden fries tossed with our
+              signature seasoning.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$3.49</strong>
+
+              <button onclick="addToCart(
+                'Seasoned Fries',
+                3.49
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SIDE -->
+        <article class="menu-card"
+                 data-category="sides">
+
+          <div class="food-image">
+            🧅
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">SIDE</span>
+
+            <h3>Loaded Chips</h3>
+
+            <p>
+              Crunchy chips served with a creamy,
+              savory dipping sauce.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$2.99</strong>
+
+              <button onclick="addToCart(
+                'Loaded Chips',
+                2.99
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- DRINK -->
+        <article class="menu-card"
+                 data-category="drinks">
+
+          <div class="food-image">
+            🥤
+          </div>
+
+          <div class="menu-info">
+
+            <span class="food-type">DRINK</span>
+
+            <h3>Fountain Drink</h3>
+
+            <p>
+              Choose from your available fountain
+              drink selections.
+            </p>
+
+            <div class="menu-bottom">
+
+              <strong>$2.49</strong>
+
+              <button onclick="addToCart(
+                'Fountain Drink',
+                2.49
+              )">
+                + ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- PROMO -->
+    <section class="promo">
+
+      <div>
+
+        <span>MAKE IT A COMBO</span>
+
+        <h2>Sub + Side + Drink</h2>
+
+        <p>
+          Complete your meal with your favorite side
+          and refreshing drink.
+        </p>
+
+      </div>
+
+      <a href="#menu" class="btn btn-light">
+        BUILD YOUR MEAL
+      </a>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+      <div class="about-content">
+
+        <span class="eyebrow">MADE WITH CARE</span>
+
+        <h2>Good food starts with <em>good ingredients.</em></h2>
+
+        <p>
+          Every order is prepared fresh so you can enjoy
+          a hearty meal made just the way you like it.
+        </p>
+
+        <p>
+          Customize your order with your favorite toppings,
+          sauces and sides.
+        </p>
+
+      </div>
+
+      <div class="about-art">
+        🔥
+      </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+    <section class="location" id="location">
+
+      <span class="eyebrow">VISIT US</span>
+
+      <h2>Find Your <em>Location</em></h2>
+
+      <p>
+        Add your franchise address, phone number and
+        business hours here.
+      </p>
+
+      <div class="location-card">
+
+        <div>
+          📍
+          <strong>Your Franchise Location</strong>
+          <span>123 Main Street, Your City, State</span>
+        </div>
+
+        <div>
+          📞
+          <strong>Call Us</strong>
+          <span>(555) 555-5555</span>
+        </div>
+
+        <div>
+          🕐
+          <strong>Hours</strong>
+          <span>11:00 AM – 9:00 PM</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- CART OVERLAY -->
+  <div class="cart-overlay"
+       id="cartOverlay"
+       onclick="closeCart(event)">
+
+    <aside class="cart-panel"
+           onclick="event.stopPropagation()">
+
+      <div class="cart-header">
+
+        <div>
+          <span class="eyebrow">YOUR ORDER</span>
+          <h2>Cart</h2>
+        </div>
+
+        <button class="close-cart"
+                onclick="closeCart()">
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="cart-order-type">
+        <span>Order type:</span>
+        <strong id="selectedOrderType">Pickup</strong>
+      </div>
+
+
+      <div id="cartItems" class="cart-items">
+
+        <div class="empty-cart">
+          <div>🥪</div>
+          <h3>Your cart is empty</h3>
+          <p>Add something delicious from the menu.</p>
+        </div>
+
+      </div>
+
+
+      <div class="cart-footer">
+
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+
+        <p class="tax-note">
+          Taxes and applicable fees calculated at checkout.
+        </p>
+
+        <button class="checkout-button"
+                onclick="checkout()">
+          CONTINUE TO CHECKOUT
+        </button>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- CHECKOUT MODAL -->
+  <div class="checkout-modal"
+       id="checkoutModal">
+
+    <div class="checkout-box">
+
+      <button class="modal-close"
+              onclick="closeCheckout()">
+        ×
+      </button>
+
+      <span class="eyebrow">CHECKOUT</span>
+
+      <h2>Complete Your Order</h2>
+
+      <p>
+        This is a demo checkout. Connect this section
+        to your approved ordering/payment provider.
+      </p>
+
+      <form onsubmit="submitOrder(event)">
+
+        <label>
+          Name
+          <input type="text"
+                 required
+                 placeholder="Your name">
+        </label>
+
+        <label>
+          Phone
+          <input type="tel"
+                 required
+                 placeholder="(555) 555-5555">
+        </label>
+
+        <label>
+          Email
+          <input type="email"
+                 required
+                 placeholder="you@example.com">
+        </label>
+
+        <label id="addressField">
+          Delivery Address
+          <input type="text"
+                 placeholder="Street address">
+        </label>
+
+        <button type="submit"
+                class="checkout-button">
+          PLACE DEMO ORDER
+        </button>
+
+      </form>
+
+      <div id="successMessage"
+           class="success-message">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer>
+
+    <div class="footer-brand">
+      🔥 <strong>YOUR SUB SHOP</strong>
+    </div>
+
+    <p>
+      Fresh subs. Big flavor. Great meals.
+    </p>
+
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#location">Location</a>
+    </div>
+
+    <small>
+      © 2026 Your Franchise. All rights reserved.
+    </small>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
